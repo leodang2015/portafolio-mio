@@ -96,8 +96,7 @@
             <p>&copy; 2026 | Portafolio de Omar Leonardo Dangond Rueda | SENA</p>
         </div>
     </footer>
-</body>
-</html>
+
     <style>
 
 :root {
@@ -148,9 +147,7 @@ body {
     opacity: 0.9;
 }
 
-/* ===================
-   HERO - PRESENTACIÓN
-   =================== */
+
 .hero {
     background: var(--white);
     padding: 50px 0;
@@ -201,8 +198,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
-    color: inherit;
-    display: block;
+    color: #000000;
 }
 
 .proyecto-card:hover {
@@ -215,9 +211,10 @@ body {
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
-
+.proyecto-imagen {
+    position: relative;
+}
 /* Gradiente para cada proyecto */
 .proyecto-1 {
     background-image: url(./fotos/leo.png);
@@ -278,21 +275,12 @@ body {
     margin-bottom: 10px;
 }
 
+
 .proyecto-info p {
     color: var(--gray);
     font-size: 0.95rem;
     margin-bottom: 15px;
 }
-
-.etiqueta {
-    display: inline-block;
-    background: var(--primary);
-    color: var(--white);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-}
-
 
 .footer {
     background: var(--dark);
@@ -305,7 +293,14 @@ body {
 .footer p {
     opacity: 0.8;
 }
-
+.etiqueta {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
 @media (max-width: 768px) {
     .header .titulo {
         font-size: 1.8rem;
@@ -319,13 +314,8 @@ body {
         grid-template-columns: 1fr;
     }
 }
-.proyecto-card:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
 
-.proyecto-card:hover .proyecto-imagen {
-    opacity: 0.9;
-}
-    </style>
+
+</style>
 </body>
 </html>
