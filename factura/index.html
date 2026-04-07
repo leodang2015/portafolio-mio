@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- Contenedor principal de la factura -->
+    <div class="contenedor">
+
+        <!-- LADO IZQUIERDO -->
+        <div class="izquierda-box">
+
+            <!-- ENCABEZADO DE LA EMPRESA -->
+            <div class="encabezado">
+                <!-- Título con logo -->
+                <h1 class="titulo">
+                    <img src="imagen/pngtree-suit-clothing-store-logo-design-inspiration-png-image_3644596-Photoroom.png">
+                    COMPAÑIA OMAR
+                </h1>
+
+                <!-- Subtítulo -->
+                <h3 class="subtitulo">VENTA DE ROPA PARA DAMA Y HOMBRE</h3>
+            </div>
+
+            <!-- SECCIÓN MEDIA (NOTAS + CONTACTO) -->
+            <div class="mitad">
+
+                <!-- Notas -->
+                <div>
+                    <h3>Notas adicionales</h3>
+                    <p>Las telas del producto son de alta calidad y están disponibles en diferentes colores.</p>
+                </div>
+
+                <!-- Información de contacto -->
+                <div>
+                    <h3>Información de contacto</h3>
+                    <p>Omar Dangond</p>
+                    <p>Carrera 12 - Suba</p>
+                    <p>Bogotá, Colombia</p>
+                </div>
+            </div>
+
+            <!-- TABLA DE PRODUCTOS -->
+            <div class="tabla-productos">
+
+                <!-- Encabezado de tabla -->
+                <div class="header-row">
+                    <div class="celda1">Producto</div>
+                    <div class="celda2">Cantidad</div>
+                    <div class="celda3">Precio</div>
+                    <div class="celda4">Total</div>
+                </div>
+
+                <!-- Filas de productos -->
+                <div class="fila-producto">
+                    <div class="celda1">Pantalones</div>
+                    <div class="celda2">2</div>
+                    <div class="celda3">$120.000</div>
+                    <div class="celda4">$240.000</div>
+                </div>
+
+                <div class="fila-producto">
+                    <div class="celda1">Chaquetas</div>
+                    <div class="celda2">1</div>
+                    <div class="celda3">$150.000</div>
+                    <div class="celda4">$150.000</div>
+                </div>
+
+                <div class="fila-producto">
+                    <div class="celda1">Camisas</div>
+                    <div class="celda2">3</div>
+                    <div class="celda3">$80.000</div>
+                    <div class="celda4">$240.000</div>
+                </div>
+
+                <div class="fila-producto">
+                    <div class="celda1">Zapatos</div>
+                    <div class="celda2">1</div>
+                    <div class="celda3">$200.000</div>
+                    <div class="celda4">$200.000</div>
+                </div>
+
+            </div>
+
+            <!-- PIE MEDIO (TÉRMINOS Y PAGO) -->
+            <div class="piemedio">
+                <h3>Términos y condiciones</h3> 
+                <br>
+                <p>Al realizar una compra, el cliente acepta los términos de la empresa.</p>
+<br>
+                <h3>Método de pago</h3>
+    <br>
+                <p>Tarjeta, efectivo o transferencia.</p>
+            </div>
+
+        </div>
+
+        <!-- LADO DERECHO -->
+        <div class="derecha-box">
+
+            <!-- Título de la factura -->
+            <h2 class="titulo-factura">FACTURA</h2>
+
+            <!-- Fechas -->
+            <div class="fechas">
+                
+                <p>Fecha: <br>20/06/2024</p>
+                <br>
+                <p>Vencimiento: <br>20/07/2024</p>
+                <br>
+                <p>N°: 001</p>
+            </div>
+
+            <!-- RESUMEN DE PRODUCTOS -->
+            <div class="resumen-productos">
+
+                <!-- Encabezado -->
+                <div class="resumen-header">
+                    <span>Qty</span>
+                    <span>Total</span>
+                </div>
+
+                <!-- Items -->
+                <div class="resumen-item">
+                    <span>2</span>
+                    <span>$240.000</span>
+                </div>
+
+                <div class="resumen-item">
+                    <span>1</span>
+                    <span>$150.000</span>
+                </div>
+
+                <div class="resumen-item">
+                    <span>3</span>
+                    <span>$240.000</span>
+                </div>
+
+                <div class="resumen-item">
+                    <span>1</span>
+                    <span>$200.000</span>
+                </div>
+
+            </div>
+
+            <!-- TOTALES -->
+            <div class="totales">
+
+                <div class="totales-header">
+                    <span>Subtotal:</span>
+                    <span>$830.000</span>
+                </div>
+
+                <div class="totales-header">
+                    <span>IVA (19%):</span>
+                    <span>$157.700</span>
+                </div>
+
+                <!-- Total final -->
+                <div class="total-final">
+                    <span>Total:</span>
+                    <span>$987.700</span>
+                </div>
+
+            </div>
+
+            <!-- Firma -->
+            <div class="firma">
+                <p>Firma del cliente</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

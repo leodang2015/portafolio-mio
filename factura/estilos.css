@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Contenedor principal de toda la factura */
+.contenedor{
+    width: 800px; /* ancho fijo */
+    margin: 40px auto; /* centrado horizontal */
+    display: flex; /* permite dividir en columnas */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* sombra */
+}
+
+/* Parte izquierda (contenido principal) */
+.izquierda-box{
+    width: 60%; /* ocupa el 60% */
+    background: #f5f5f5; /* fondo claro */
+    height:100%;
+}
+
+/* Parte derecha (resumen o totales) */
+.derecha-box{
+    width: 40%; /* ocupa el 40% */
+    background: #2f3e46; /* fondo oscuro */
+    color: white; /* texto blanco */
+    height:50%;
+}
+
+/* Encabezado de la factura */
+.encabezado{
+    background-color: #50634f3a;
+    padding: 3.5%;
+    display: flex;
+    flex-direction: column; /* elementos en columna */
+    justify-content: space-evenly; /* distribución vertical */
+}
+
+/* Título principal */
+.titulo{
+    font-size: 28px;
+}
+
+/* Subtítulo o información secundaria */
+.subtitulo{
+    font-size: 16px;
+    padding: 20px 20px;
+    color: #474747;
+}
+
+/* Sección de datos dividida en dos columnas */
+.mitad{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* espacio entre columnas */
+    padding: 50px 20px 20px 20px;
+    margin-bottom: 20px;
+    height: 18.7%;
+}
+
+/* Contenedor de la tabla de productos */
+.tabla-productos{
+    padding: 20px;
+    margin:0%;
+    background-color: #50634f3a;
+}
+
+/* Filas de encabezado y productos */
+.header-row, .fila-producto{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Encabezado en negrita */
+.header-row{
+    font-weight: bold;
+}
+
+/* Columnas de la tabla */
+.celda1{ flex: 2; } /* más ancho */
+.celda2, .celda3, .celda4{
+    flex: 1;
+    text-align: right; /* alineado a la derecha */
+}
+
+/* Sección intermedia inferior */
+.piemedio{
+    padding: 12% 20% 27% 5%;
+    margin-top: 20px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título de la factura (lado derecho) */
+.titulo-factura{
+    display: flex;
+    height: 60%;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 22%;
+    background-color: #2f3e46;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* Sección de fechas */
+.fechas{
+    padding: 15%;
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #3f4f58;
+    align-items: center;
+    text-align: center;
+}
+
+/* Contenedor de totales */
+.totales{
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    background-color: #3f4f58;
+    justify-content: space-between;
+}
+
+/* Total final destacado */
+.total-final{
+    font-size: 20px;
+    display: flex;
+    height: 10%;
+    justify-content: space-between;
+    margin:10px 40px;
+    padding: 0%  0% 30% 0%;
+}
+
+/* Diseño responsive para pantallas pequeñas */
+@media (max-width: 600px){
+    .contenedor{
+        flex-direction: column; /* pasa a vertical */
+        width: 100%;
+    }
+
+    .mitad{
+        flex-direction: column;
+    }
+
+    .header-row, .fila-producto{
+        flex-direction: column;
+    }
+}
+
+/* Resumen de productos (lado derecho) */
+.resumen-productos{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado y filas del resumen */
+.resumen-header,
+.resumen-item{
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    margin:10px 40px;
+    background-color: #2f3e46;
+}
+
+/* Encabezado en negrita */
+.resumen-header{
+    font-weight: bold;
+}
+
+/* Encabezado de totales */
+.totales-header{
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 7.2% 0;
+    margin:10px 40px;
+}
+
+/* Sección de firma */
+.firma{
+    padding: 5% 20px 20px 20px;
+    height: 1%;
+    border-top: 1px solid white; /* línea superior */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #3f4f58;
+    align-items: center;
+    color:white;
+}
+
+/* Estilo de imágenes */
+img{
+    height: 10%;
+    width: 20%;
+}
