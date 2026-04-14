@@ -4,78 +4,197 @@
 <head>
     <meta charset="UTF-8">
     <title>Portafolio</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Header y sus clases */
+        header {
+            background: #3b3f45;
+            color: red;
+            padding: 1%;
+        }
+
+        .width {
+            width: 100%;
+        }
+
+        .nombre {
+            padding: 0% 0% 0% 25%;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .vamos {
+            padding: 0% 0% 0% 34%;
+        }
+
+        /* Sección Inicio */
+        .inicio {
+            width: 70%;
+            vertical-align: middle;
+            text-align: left;
+            padding: 0% 15%;
+        }
+
+        .perfilv {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            padding: 10% 1%;
+        }
+
+        .inicio h1 {
+            margin-bottom: 15px;
+            padding: 0% 10%;
+            font-size:500%;
+            color:#54e26b;
+        }
+
+        .inicio p {
+            padding: 0% 5% 0% 10%;
+            font-size: 200%;
+        }
+
+        .inicio button {
+            width: 25%;
+            vertical-align: middle;
+            margin: 0% 25%;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Sección Perfil */
+        .perfil {
+            background-color: #54e26b;
+            color: rgb(116, 130, 255);
+            text-align: center;
+            padding: 2% 10% 2% 10%;
+        }
+
+        .circulo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .letra {
+            font-size: 300%;
+            padding: 0% 10%;
+        }
+
+        /* Sección Proyectos */
+        .proyectos {
+            text-align: center;
+        }
+
+        .proy {
+            font-size: 50px;
+            padding: 0% 0% 0% 0%;
+        }
+
+        .pend {
+            margin: auto;
+        }
+
+        .card {
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            border-color: #40453b07;
+            box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 100px;
+        }
+        .imagenesp {
+            width: 900px;
+            padding: 2%;
+            height: 100px;
+        }
+
+        /* Elementos compartidos */
+        button {
+            background-color: #38ff1e;
+            color: rgb(76, 168, 0);
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        p, h3 {
+            color: rgb(10, 10, 10);
+        }
+
+        /* Footer */
+        .pie {
+            text-align: right;
+            background-color: #3b3f45;
+            color: rgb(255, 255, 255);
+            margin: 0%;
+            padding: 1% 14% 1% 0%;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-
-        <table width="100%">
+        <table class="width">
             <tr>
-
                 <td>
                     <h2 class="nombre">Omar Leonardo Dangond Rueda</h2>
                 </td>
-
-                <td >
+                <td>
                     <nav>
                         <div class="vamos">
-                        <a href="#" >Inicio</a>
-                        <a href="#">¿Quién soy?</a>
-                        <a href="#">Proyectos</a>
+                            <a href="#">Inicio</a>
+                            <a href="#">¿Quién soy?</a>
+                            <a href="#">Proyectos</a>
                         </div>
                     </nav>
                 </td>
-
             </tr>
         </table>
-
     </header>
 
-
     <section class="inicio">
-
         <table>
             <tr>
-    <td>
-        <img src="fotos/IMG_20240830_133854.jpg" class="perfilv">
-    </td>
-
-    <td>
-        <h1>¿Quién soy?</h1>
-        <p>Soy una persona muy amistosa, en gran parte debido a que fui criado por vendedores de ropa, quienes me enseñaron desde pequeño la importancia de tratar bien a las personas y asi aprendí a atender con paciencia, respeto y amabilidad a quienes me rodean.</p>
-        <button>Leer más</button>
-    </td>
-</tr>
+                <td>
+                    <img src="fotos/IMG_20240830_133854.jpg" class="perfilv">
+                </td>
+                <td>
+                    <h1>¿Quién soy?</h1>
+                    <p>Soy una persona muy amistosa, en gran parte debido a que fui criado por vendedores de ropa, quienes me enseñaron desde pequeño la importancia de tratar bien a las personas y asi aprendí a atender con paciencia, respeto y amabilidad a quienes me rodean.</p>
+                    <button>Leer más</button>
+                </td>
+            </tr>
         </table>
-
     </section>
 
-
     <section class="perfil">
-
         <img src="fotos/IMG_20240830_070056.jpg" class="circulo">
-
         <p class="letra">
             Soy una persona a la que le gusta diseñar páginas web y crear soluciones digitales que se adapten a las necesidades del cliente en el ámbito del software asi disfrutando el proceso de analizar lo que el cliente requiere y transformarlo en un diseño funcional.
         </p>
-
-
         <h4>- Omar Leonardo Dangond Rueda</h4>
-
     </section>
 
-
     <section class="proyectos">
-
         <h2 class="proy">Mis proyectos</h2>
-        
-<table class="pend">
-
+        <table class="pend">
             <tr>
-
                 <td>
-                    
                     <div class="card">
                         <img src="./fotos/leo.png" class="imagenesp">
                         <h3>Proyecto 1</h3>
@@ -83,7 +202,6 @@
                         <button>Ver proyecto</button>
                     </div>
                 </td>
-
                 <td>
                     <div class="card">
                         <img src="./fotos/Captura de pantalla 2026-03-10 073727.png" class="imagenesp">
@@ -92,7 +210,6 @@
                         <button>Ver proyecto</button>
                     </div>
                 </td>
-
                 <td>
                     <div class="card">
                         <img src="./fotos/5eeea355389655.59822ff824b72.gif" class="imagenesp">
@@ -101,7 +218,6 @@
                         <button>Ver proyecto</button>
                     </div>
                 </td>
-
                 <td>
                     <div class="card">
                         <img src="./fotos/mN5que.gif" class="imagenesp">
@@ -109,149 +225,14 @@
                         <p>Lo coloque porque de pequeño me gustaba construir cuando era pequeño asi aumentando mi creatividad en la realizacion de objetos interesantes</p>
                         <button>Ver proyecto</button>
                     </div>
-                    
                 </td>
-                
             </tr>
-
         </table>
-
     </section>
-<style>
-    .letra{
-        font-size: 30px;
-        padding: 0% 20%;
-    }
-    body {
-        margin: 0;
-        font-family: Arial;
-    }
 
-    header {
-        background: #3b3f45;
-        color: red ;
-        padding: 1%;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-    }
-
-    .perfil {
-        background-color: #54e26b;
-        color: rgb(116, 130, 255);
-        text-align: center;
-        padding: 2% 10% 2% 10%;
-    }
-
-    .proyectos {
-        text-align: center;
-    }
-
-    .card {
-        width: 200px;
-        padding: 20px;
-        margin: 20px;
-        border-color: #40453b07;
-        box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .card img {
-        width: 100%;
-    }
-
-    .perfill {
-        width: 25%;
-        height: 300px;
-    }
-
-    .inicio{
-    width: 50%;
-    vertical-align: middle;
-    text-align: left;
-    padding: 0% 22%;
-}
-
-
-.perfilv{
-    width: 350px;
-    height: 350px;
-    margin: 0 auto;
-    padding: 10% 10%;
-}
-
-
-.inicio h1{
-    margin-bottom: 15px;
-    padding:0% 20%;
-}
-
-.inicio p{
-    padding:0% 5% 0% 20%;
-}
-.inicio button{
-    width: 25%;
-    vertical-align: middle;
-    margin: 0% 25%;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-    .imagenesp {
-        width: 400px;
-        height: 300px;
-    }
-
-    button {
-        background-color: #38ff1e;
-        color: rgb(76, 168, 0);
-        border: none;
-        padding: 10px 20px;
-        margin-top: 10px;
-    }
-
-    p,h3,h2 {
-        color: rgb(10, 10, 10);
-    }
-    .circulo{
-        width: 200px; 
-        height: 200px; 
-        border-radius: 50%;
-    }
-    .pie{
-        text-align: right;
-        background-color: #3b3f45;
-        color: rgb(255, 255, 255);
-        margin: 0%;
-        padding: 1% 25% 1% 0%;
-    }
-    .nombre{
-        padding: 0% 0% 0% 39%;
-        color: white;
-    }
-    .center{
-        padding: 20%;
-    }
-    .vamos{
-        padding: 0% 0% 0% 10%;
-    }
-    .proy{
-        font-size: 50px;
-        padding: 0% 0% 0% 0%;
-    }
-    .pend{
-        padding:0% 22%;
-    }
-</style>
-</body>
-
-</html>
-<footer>
-    <p class="pie">Copyright © 2018. Todos los derechos reservados</p>
-</footer>
+    <footer>
+        <p class="pie">Copyright © 2018. Todos los derechos reservados</p>
+    </footer>
 
 </body>
-
 </html>
