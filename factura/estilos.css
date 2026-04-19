@@ -6,31 +6,30 @@
 
 /* Contenedor principal de toda la factura */
 .contenedor{
+    max-height: 200px;
     width: 800px; /* ancho fijo */
     margin: 40px auto; /* centrado horizontal */
     display: flex; /* permite dividir en columnas */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* sombra */
 }
 
 /* Parte izquierda (contenido principal) */
 .izquierda-box{
-    width: 60%; /* ocupa el 60% */
+    width: 65%; /* ocupa el 60% */
     background: #f5f5f5; /* fondo claro */
     height:100%;
 }
 
 /* Parte derecha (resumen o totales) */
 .derecha-box{
-    width: 40%; /* ocupa el 40% */
+    width: 25%; /* ocupa el 40% */
     background: #2f3e46; /* fondo oscuro */
     color: white; /* texto blanco */
-    height:50%;
+    height:100%;
 }
 
 /* Encabezado de la factura */
 .encabezado{
     background-color: #50634f3a;
-    padding: 3.5%;
     display: flex;
     flex-direction: column; /* elementos en columna */
     justify-content: space-evenly; /* distribución vertical */
@@ -53,15 +52,18 @@
     display: flex;
     justify-content: space-between;
     gap: 20px; /* espacio entre columnas */
-    padding: 50px 20px 20px 20px;
-    margin-bottom: 20px;
-    height: 18.7%;
+    height: 177px;
+    margin: 3% 3% 3% 10%;
+}
+
+.parte-final{
+        margin: 3% 3% 3% 10%;
 }
 
 /* Contenedor de la tabla de productos */
 .tabla-productos{
-    padding: 20px;
-    margin:0%;
+    height: 205px;
+    padding: 3% 3% 3% 10%;
     background-color: #50634f3a;
 }
 
@@ -84,122 +86,163 @@
     text-align: right; /* alineado a la derecha */
 }
 
+.tabla-totales{
+    display:flex;
+    flex-direction: column;
+}
+
+/*separador entre tabla y totales*/
+.separador{
+    font-weight: bold;
+    display:flex;
+    flex-direction: row;
+    margin: 0%;
+    justify-content: space-between;
+}
+
+
+.gris{
+    color: #3f4f58;
+    font-weight: bold;
+}
+
 /* Sección intermedia inferior */
 .piemedio{
-    padding: 12% 20% 27% 5%;
     margin-top: 20px;
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: space-between;
+    height: 100px;
+    padding: 0% 0% 0% 5%;
+}
+
+.pagos-boton{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+
+
+.boton-pago{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.boton-pago-circular{
+    width: 15px;
+    height: 15px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+
+.nombre-card{
+    display:flex;
+    flex-direction: row;
+    flex: 75% 12.5% 12.5%;
+    padding: 0% 0% 5% 0%;
+}
+
+.nombre-card input{
+    width: 25%;
 }
 
 /* Título de la factura (lado derecho) */
 .titulo-factura{
     display: flex;
-    height: 60%;
     align-items: center;
-    margin-bottom: 20px;
-    padding: 22%;
     background-color: #2f3e46;
     flex-direction: column;
     justify-content: space-evenly;
+    height: 169px;
 }
 
 /* Sección de fechas */
 .fechas{
-    padding: 15%;
+    height: 209px;
     display: flex;
-    height: 80%;
     flex-direction: column;
     justify-content: space-evenly;
     background-color: #3f4f58;
     align-items: center;
     text-align: center;
 }
+.resumen-productos{
+    height: 202px;
+    padding: 17% 5% 0% 0%;
+}
+
+
+
 
 /* Contenedor de totales */
 .totales{
     display: flex;
-    padding: 5%;
+    height: 80%;
     flex-direction: column;
     background-color: #3f4f58;
     justify-content: space-between;
+    padding: 10% 12% 13% 12%;
 }
 
+.totales-header{
+    color:  #a8c3d1;;
+}
+
+.totales p{
+    padding: 4% 0%;
+}
 /* Total final destacado */
 .total-final{
+    font-weight: bold;
+    background-color: #3f4f58;
     font-size: 20px;
     display: flex;
-    height: 10%;
     justify-content: space-between;
-    margin:10px 40px;
-    padding: 0%  0% 30% 0%;
+    padding: 9% 0%;
 }
 
-/* Diseño responsive para pantallas pequeñas */
-@media (max-width: 600px){
-    .contenedor{
-        flex-direction: column; /* pasa a vertical */
-        width: 100%;
-    }
 
-    .mitad{
-        flex-direction: column;
-    }
 
-    .header-row, .fila-producto{
-        flex-direction: column;
-    }
-}
 
-/* Resumen de productos (lado derecho) */
-.resumen-productos{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Encabezado y filas del resumen */
-.resumen-header,
-.resumen-item{
-    height: 10px;
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    margin:10px 40px;
-    background-color: #2f3e46;
-}
-
-/* Encabezado en negrita */
-.resumen-header{
-    font-weight: bold;
-}
-
-/* Encabezado de totales */
-.totales-header{
-    height: 10px;
-    display: flex;
-    justify-content: space-between;
-    padding: 7.2% 0;
-    margin:10px 40px;
-}
-
-/* Sección de firma */
 .firma{
-    padding: 5% 20px 20px 20px;
-    height: 1%;
-    border-top: 1px solid white; /* línea superior */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
     background-color: #3f4f58;
-    align-items: center;
+    padding: 80% 0% 10% 0%;
+    text-align: center;
+}
+.firma p{
     color:white;
+    padding: 0% 0% 4% 0%;
 }
 
-/* Estilo de imágenes */
+.raya{
+    border-top: 0.5px solid white;
+    width: 80%;
+    margin: 0% 10% 0% 10%;
+}
 img{
     height: 10%;
     width: 20%;
+}
+
+
+/* Diseño responsive para pantallas pequeñas */
+
+/* 📱 RESPONSIVE CORRECTO */
+@media (max-width: 768px){
+
+    .contenedor{
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+
 }
