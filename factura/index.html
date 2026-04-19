@@ -23,7 +23,8 @@
             <div class="encabezado">
                 <!-- Título con logo -->
                 <h1 class="titulo">
-                    <img src="imagen/pngtree-suit-clothing-store-logo-design-inspiration-png-image_3644596-Photoroom.png">
+                    <img
+                        src="imagen/pngtree-suit-clothing-store-logo-design-inspiration-png-image_3644596-Photoroom.png">
                     COMPAÑIA OMAR
                 </h1>
 
@@ -90,97 +91,145 @@
                 </div>
 
             </div>
+            <!-- SEPARADOR DE PRODUCTOS Y TOTALES -->
+            <div class="parte-final">
+                <div class="tabla-totales">
+                    <div class="fila-producto">
+                        <div class="celda4">
+                            <p>Subtotal</p>
+                        </div>
+                    </div>
+                        <div class="fila-producto">
+                        <div class="celda4">
+                            <p>IVA (19%)</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="separador">
 
+                <div class="fila-producto">
+                    <div class="celda1">
+                        <p>Términos y condiciones</p>
+                    </div>
+                </div>
+                <div class="fila-producto">
+                    <div class="celda4">
+                        <p class="gris">Total</p>
+                    </div>
+                </div>
+            </div>
             <!-- PIE MEDIO (TÉRMINOS Y PAGO) -->
             <div class="piemedio">
-                <h3>Términos y condiciones</h3> 
-                <br>
-                <p>Al realizar una compra, el cliente acepta los términos de la empresa.</p>
-<br>
-                <h3>Método de pago</h3>
-    <br>
-                <p>Tarjeta, efectivo o transferencia.</p>
+            <p>Al realizar una compra, el cliente acepta los términos de la empresa.</p>
+            <br>
+            <h3>Método de pago</h3>
+            </div>
+            <div class="pagos-boton">
+                <input type="radio" id="tarjeta" name="pago" value="tarjeta">
+                <label for="tarjeta">Tarjeta de crédito/débito</label><br>
+                <input type="radio" id="efectivo" name="pago" value="efectivo">
+                <label for="efectivo">Efectivo</label><br>
+                <input type="radio" id="transferencia" name="pago" value="transferencia">
+                <label for="transferencia">Transferencia bancaria</label>
+            </div>    
+            <div class="nombre-cliente">
+                <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="usuario_nombre" placeholder="Escribe aquí tu nombre">
+                </form>
+            </div>   
+            <div class="nombre-card">
+                    <form>
+                    <label for="card">Número de tarjeta:</label>
+                <input type="text" id="card" name="usuario_card" placeholder="Escribe aquí tu número de tarjeta">
+                </form>
+                <form>
+                <label for="fecha">CRP:</label>
+                <input type="text" id="fecha" name="usuario_fecha" placeholder="Escribe aquí la fecha de vencimiento">
+                </form>
+                <form>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="usuario_cvv" placeholder="Escribe aquí el CVV">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- LADO DERECHO -->
+    <div class="derecha-box">
+
+        <!-- Título de la factura -->
+        <h2 class="titulo-factura">FACTURA</h2>
+
+        <!-- Fechas -->
+        <div class="fechas">
+
+            <p>Fecha: <br>20/06/2024</p>
+            <br>
+            <p>Vencimiento: <br>20/07/2024</p>
+            <br>
+            <p>N°: 001</p>
+        </div>
+
+        <!-- RESUMEN DE PRODUCTOS -->
+        <div class="resumen-productos">
+
+            <!-- Encabezado -->
+            <div class="header-row">
+                <span>Qty</span>
+                <span>Total</span>
+            </div>
+
+            <!-- Items -->
+            <div class="fila-producto">
+                <div class="celda1">2</div>
+                <div class="celda2">$240.000</div>
+            </div>
+
+            <div class="fila-producto">
+                <div class="celda1">1</div>
+                <div class="celda2">$150.000</div>
+            </div>
+
+            <div class="fila-producto">
+                <div class="celda1">3</div>
+                <div class="celda2">$240.000</div>
+            </div>
+
+            <div class="fila-producto">
+                <div class="celda1">1</div>
+                <div class="celda2">$200.000</div>
             </div>
 
         </div>
 
-        <!-- LADO DERECHO -->
-        <div class="derecha-box">
+        <!-- TOTALES -->
+        <div class="totales">
 
-            <!-- Título de la factura -->
-            <h2 class="titulo-factura">FACTURA</h2>
-
-            <!-- Fechas -->
-            <div class="fechas">
-                
-                <p>Fecha: <br>20/06/2024</p>
-                <br>
-                <p>Vencimiento: <br>20/07/2024</p>
-                <br>
-                <p>N°: 001</p>
+            <div class="totales-header">
+                <p class="celda1">$830.000</p>
             </div>
 
-            <!-- RESUMEN DE PRODUCTOS -->
-            <div class="resumen-productos">
-
-                <!-- Encabezado -->
-                <div class="resumen-header">
-                    <span>Qty</span>
-                    <span>Total</span>
-                </div>
-
-                <!-- Items -->
-                <div class="resumen-item">
-                    <span>2</span>
-                    <span>$240.000</span>
-                </div>
-
-                <div class="resumen-item">
-                    <span>1</span>
-                    <span>$150.000</span>
-                </div>
-
-                <div class="resumen-item">
-                    <span>3</span>
-                    <span>$240.000</span>
-                </div>
-
-                <div class="resumen-item">
-                    <span>1</span>
-                    <span>$200.000</span>
-                </div>
-
+            <div class="totales-header">
+                <p class="celda1">$157.700</p>
             </div>
 
-            <!-- TOTALES -->
-            <div class="totales">
-
-                <div class="totales-header">
-                    <span>Subtotal:</span>
-                    <span>$830.000</span>
-                </div>
-
-                <div class="totales-header">
-                    <span>IVA (19%):</span>
-                    <span>$157.700</span>
-                </div>
-
-                <!-- Total final -->
-                <div class="total-final">
-                    <span>Total:</span>
-                    <span>$987.700</span>
-                </div>
-
+            <!-- Total final -->
+            <div class="total-final">
+                <p div="celda1">$987.700</p>
             </div>
 
-            <!-- Firma -->
-            <div class="firma">
-                <p>Firma del cliente</p>
-            </div>
+        </div>
 
+        <!-- Firma -->
+        <div class="firma">
+            <p class="raya"></p>
+            <p>Firma del cliente</p>
         </div>
 
     </div>
 
+    </div>
+
 </body>
+
 </html>
