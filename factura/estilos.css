@@ -235,14 +235,13 @@ img{
 }
 
 
-/* Diseño responsive para pantallas pequeñas */
 
-/* 📱 RESPONSIVE CORRECTO */
 @media (max-width: 768px){
 
     .contenedor{
-        transform: scale(0.85);
-        transform-origin: top center;
+        transform: scale(0.6);
+        transform-origin: top left;
     }
 
 }
+
