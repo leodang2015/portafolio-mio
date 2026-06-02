@@ -1,10 +1,12 @@
 /* VARIABLES CSS (Obligación técnica) */
 :root {
-    --primario: #1a202c;
     --dorado: #c5a059;
     --blanco: #ffffff;
-    --gris-claro: #f7fafc;
+    --gris-claro: #595b5c;
     --texto: #2d3748;
+    --primario: rgb(5, 12, 75);
+    --azul-pastel: rgb(96, 96, 96);
+    --javier: rgb(88, 91, 156);
 }
 
 /* RESETEO Y BÁSICOS */
@@ -33,10 +35,13 @@ body {
     padding: 20px 0;
 }
 
+
+
 .barra-superior {
     display: flex; /* FLEXBOX */
     justify-content: space-between;
     align-items: center;
+    background: var(--primario);
 }
 
 .menu-navegacion {
@@ -58,13 +63,16 @@ body {
 .presentacion-principal {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600');
     background-size: cover;
-    height: 450px;
-    display: flex; /* FLEXBOX */
-    flex-direction: column; /* COLUMNA */
+    height: 350px;
+    display: flex; 
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--blanco);
+    max-width: 1200px;
+    margin: 0 auto;
+
 }
 
 .titulo-grande {
@@ -83,6 +91,7 @@ body {
     height: 200px;
     margin-bottom: 15px;
 }
+
 
 .boton-accion {
     background: var(--dorado);
@@ -105,17 +114,18 @@ body {
 
 /* ÁREAS (CSS Grid) */
 .seccion-areas {
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 .cuadricula-areas {
     display: grid; /* GRID */
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    
 }
 
 .tarjeta-area {
-    background: var(--gris-claro);
+    background: var(--javier);
     padding: 30px;
     text-align: center;
     border-bottom: 3px solid var(--dorado);
@@ -129,14 +139,18 @@ body {
 
 /* EQUIPO Y PROCESO (Grid 2-Col) */
 .seccion-equipo-proceso {
-    background: #edf2f7;
-    padding: 60px 0;
+    background: var(--azul-pastel);
+    padding: 30px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .cuadricula-equipo {
     display: grid; /* GRID */
     grid-template-columns: 1fr 1fr; /* 2 COLUMNAS */
     gap: 50px;
+    color: var(--blanco);
+
 }
 
 .grid-fotos {
@@ -147,7 +161,7 @@ body {
 }
 
 .foto-perfil {
-    background: var(--blanco);
+    background: var(--texto);
     padding: 15px;
     text-align: center;
 }
@@ -164,13 +178,14 @@ body {
 
 /* SERVICIOS (Grid 2-Col) */
 .seccion-servicios {
-    padding: 60px 0;
+    padding: 25px 0;
 }
 
 .cuadricula-servicios {
+    padding: 10px;
     display: grid; /* GRID */
     grid-template-columns: 1fr 1fr; /* 2 COLUMNAS */
-    gap: 20px;
+    gap: 10px;
     margin-top: 30px;
 }
 
@@ -194,23 +209,22 @@ body {
 
 /* SECCIÓN VIDEOS */
 .seccion-videos {
-    padding: var(--espaciado-seccion) 0;
+    padding: var(--espacio-grande) 0;
 }
 
 /* TÍTULO CON PSEUDO-ELEMENTO (Obligatorio: ::after) */
-.titulo-subrayado {
+.titulo-seccion {
     text-align: center;
-    font-family: var(--fuente-titulos);
-    color: var(--color-primario);
+    color: var(--color-principal);
     margin-bottom: 50px; /* Sin usar <br> */
-    position: relative;
     text-transform: uppercase;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.titulo-subrayado::after {
+.titulo-seccion::after {
     content: "";
     display: block;
-    width: 60px;
+    width: 70px;
     height: 4px;
     background-color: var(--color-dorado);
     margin: 15px auto 0;
@@ -219,51 +233,211 @@ body {
 /* REJILLA (Obligatorio: CSS Grid) */
 .rejilla-videos {
     display: grid;
-    /* Responsividad: Se ajusta solo según el tamaño de pantalla */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Manejo de responsividad: se adapta solo (mínimo 300px por tarjeta) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* TARJETA Y PSEUDO-CLASE (Obligatorio: :hover) */
+/* TARJETA CON PSEUDO-CLASE (Obligatorio: :hover) */
 .tarjeta-video {
-    background-color: #ffffff;
-    padding: 15px;
+    background-color: var(--color-blanco);
     border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    display: flex; /* Flexbox interno */
+    flex-direction: column;
 }
 
 .tarjeta-video:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
 }
 
-.tarjeta-video h4 {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: var(--color-primario);
-    text-align: center;
-    font-family: var(--fuente-titulos);
-}
 
-/* CONTENEDOR PROPORCIONAL 16:9 */
-.video-proporcional {
-    position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto */
-    height: 0;
-    overflow: hidden;
-    background-color: #000; /* Fondo negro mientras carga */
-}
 
-.video-proporcional video {
+.video-proporcional iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Fondo transparente si el video lo requiere */
-    background: transparent;
 }
 
+.info-video {
+    padding: 20px;
+    text-align: center;
+}
+
+.info-video h4 {
+    color: var(--color-dorado);
+    margin-bottom: 10px;
+}
+
+.info-video p {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+.telefono-cabecera {
+    font-size: 0.9rem;
+    color: var(--blanco);
+}
+
+.seccion-areas {
+            padding: 30px 0;
+        }
+        
+.cuadricula-areas {
+            display: grid; /* GRID DE 6 COLUMNAS */
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+    .tarjeta-area {
+            background: var(--javier);
+            text-align: center;
+            border-bottom: 30px solid var(--dorado);
+            color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+            min-height: 350px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .tarjeta-area i {
+            font-size: 2rem;
+            color: var(--dorado);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .tarjeta-area img {
+            width: 100%;
+            max-width: 180px;
+            height: 140px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+/* ==================================================
+CORRECCIÓN PARA QUE LOS VIDEOS NO SE VEAN CORTADOS
+   ================================================== */
+.seccion-videos {
+    padding: 50px 0;
+    background: #f0f2f5;
+}
+
+.seccion-videos .titulo-seccion {
+    color: var(--primario);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rejilla-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-video {
+    background-color: var(--blanco);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+    display: flex; 
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    object-fit: fill;
+}
+
+.tarjeta-video:hover {
+    transform: translateY(-5px);
+}
+/* AQUÍ ESTÁ EL CAMBIO IMPORTANTE */
+.envoltorio-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantiene la proporción perfecta del video automáticamente */
+    overflow: hidden; 
+}
+
+.envoltorio-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.caja-texto {
+    padding: 15px;
+    text-align: center;
+    background: var(--blanco);
+}
+
+.caja-texto h4 {
+    color: var(--dorado);
+    margin-bottom: 5px;
+}
+
+.caja-texto p {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+/* ==================================================
+   CSS AJUSTADO PARA VIDEOS DE DRIVE (MÁS ALTO)
+   ================================================== */
+.seccion-videos {
+    padding: 50px 0;
+    background: #f0f2f5;
+}
+
+.rejilla-videos {
+    display: grid;
+    /* Ajustamos el tamaño mínimo de las columnas para que quepan bien */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-video {
+    background-color: var(--blanco);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+    display: flex; 
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* ESTE ES EL BLOQUE CLAVE: Subimos la altura a 300px */
+.envoltorio-video {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Al darle 300px, el aviso de Drive se acomoda arriba y el video se ve completo abajo */
+    background-color: #000000; 
+}
+
+.envoltorio-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.caja-texto {
+    padding: 15px;
+    text-align: center;
+    background: var(--blanco);
+}
 /* RESPONSIVIDAD */
 @media (max-width: 768px) {
     .barra-superior, .cuadricula-equipo, .cuadricula-servicios, .barra-inferior {
