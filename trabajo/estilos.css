@@ -199,6 +199,8 @@ body {
     background: var(--primario);
     color: var(--blanco);
     padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .barra-inferior {
