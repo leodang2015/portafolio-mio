@@ -116,7 +116,7 @@
 
     <!-- 5. LISTA DE SERVICIOS (Layout: CSS Grid 2-Col) -->
     <section id="servicios" class="seccion-servicios contenedor">
-        <h2 class="titulo-seccion">7. LISTA DE 8 PRODUCTOS O SERVICIOS</h2>
+        <h2 class="titulo-seccion">LISTA DE 8 PRODUCTOS O SERVICIOS</h2>
         <div class="cuadricula-servicios">
             <div class="item-servicio">
                 <h4>1. CONSULTORÍA LEGAL INICIAL</h4>
@@ -153,53 +153,56 @@
         </div>
     </section>
 
-    <section id="videos" class="seccion-videos contenedor">
-    <!-- Pseudo-elemento usado aquí en el CSS -->
-    <h2 class="titulo-subrayado">VIDEOS INFORMATIVOS</h2>
+<section id="videos" class="seccion-videos contenedor">
+    <!-- Título que usará un pseudo-elemento en el CSS -->
+    <h2 class="titulo-seccion">BIBLIOTECA MULTIMEDIA JURÍDICA</h2>
     
     <div class="rejilla-videos">
         
-        <!-- Video 1 -->
-        <div class="tarjeta-video">
-            <div class="video-proporcional">
-                <!-- Se usa <video> con 'controls' y SIN 'autoplay' para que esté en pausa -->
-                <video controls>
-                    <source src="videos/WhatsApp Video 2026-05-21 at 8.58.16 PM (1).mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+        <!-- Tarjeta de Video 1 -->
+        <article class="tarjeta-video">
+            <div class="envoltorio-video">
+                <!-- Usamos /preview para que Drive permita visualizarlo correctamente -->
+                <iframe src="https://drive.google.com/file/d/1Z7eraKBK6NW_hJx6n7Cd0TlqE5UPVj6X/preview"  allow="autoplay" allowfullscreen></iframe>
             </div>
-            <h4>Conozca a nuestro ejecutivo Mejía</h4>
-        </div>
-        
-        <!-- Video 2 -->
-        <div class="tarjeta-video">
-            <div class="video-proporcional">
-                <video controls>
-                    <source src="videos/WhatsApp Video 2026-05-21 at 8.58.17 PM (1).mp4" type="video/mp4">
-                </video>
+            <div class="caja-texto">
+                <h4>Presentación Ejecutiva</h4>
+                <p>Conozca al equipo Mejía y nuestra visión legal.</p>
             </div>
-            <h4>Nuestra manera de trabajar</h4>
-        </div>
+        </article>
 
-        <!-- Video 3 -->
-        <div class="tarjeta-video">
-            <div class="video-proporcional">
-                <video controls>
-                    <source src="videos/video_20260602133502.mp4" type="video/mp4">
-                </video>
+        <!-- Tarjeta de Video 2 -->
+        <article class="tarjeta-video">
+            <div class="envoltorio-video">
+                <iframe src="https://drive.google.com/file/d/1e0mCamGWp3Gqn96uoPJzqt2xFzs3ayfl/preview"  allow="autoplay" allowfullscreen></iframe>
             </div>
-            <h4>Servicios y Tarifas</h4>
-        </div>
+            <div class="caja-texto">
+                <h4>Metodología Operativa</h4>
+                <p>Nuestra forma de abordar cada caso jurídico.</p>
+            </div>
+        </article>
 
-        <!-- Video 4 -->
-        <div class="tarjeta-video">
-            <div class="video-proporcional">
-                <video controls>
-                    <source src="videos/dame_un_video_que_se_trate_de_los_productos_de_mej.mp4" type="video/mp4">
-                </video>
+        <!-- Tarjeta de Video 3 -->
+        <article class="tarjeta-video">
+            <div class="envoltorio-video">
+                <iframe src="https://drive.google.com/file/d/1erQF5re0F80fDydQLFx15hR5BzQQXwjg/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
-            <h4>Nuestros Productos Jurídicos</h4>
-        </div>
+            <div class="caja-texto">
+                <h4>Servicios y Honorarios</h4>
+                <p>Detalle de tarifas y representación legal.</p>
+            </div>
+        </article>
+
+        <!-- Tarjeta de Video 4 -->
+        <article class="tarjeta-video">
+            <div class="envoltorio-video">
+                <iframe src="https://drive.google.com/file/d/1xYeALOtf0kchPM9nA60bSL13EDcpbLbx/preview" allow="autoplay" allowfullscreen></iframe>
+            </div>
+            <div class="caja-texto">
+                <h4>Productos Especializados</h4>
+                <p>Soluciones a medida para empresas y personas.</p>
+            </div>
+        </article>
 
     </div>
 </section>
@@ -221,3 +224,4 @@
     </footer>
 </body>
 </html>
+
