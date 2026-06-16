@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg">
+    <!-- HERO -->
+    <header class="hero">
+        <div class="nav">
+            <div class="nav-left">
+                <button class="btn-icon">☰</button>
+                <span class="logo">Constructor</span>
+            </div>
+
+            <nav class="menu">
+                <a href="#">Mujer</a>
+                <a class="active" href="#">Hombre</a>
+                <a href="#">Niños</a>
+            </nav>
+
+            <div class="nav-right">
+                <input class="search" placeholder="Buscar..." />
+
+                <button class="btn">Cuenta</button>
+                <button class="btn cart">Bolsa <span>3</span></button>
+            </div>
+        </div>
+        <br class="linea">
+        <div class="arriba">
+            <div class="hero-title">Zapatillas de Hombre</div>
+
+            <button class="cta">Comprar Ahora</button>
+        </div>
+
+    </header>
+    <div class="subheader-bar">
+
+        <div class="subheader-title">Zapatos y zapatillas para hombre</div>
+
+        <div class="sorting-options">
+
+            <a href="#" class="sort-opt active">Más recientes</a>
+
+            <a href="#" class="sort-opt">Mejor valorados</a>
+
+            <a href="#" class="sort-opt">De menor a mayor precio</a>
+
+            <a href="#" class="sort-opt">De mayor a menor precio</a>
+
+        </div>
+
+        <form class="sub-newsletter" onsubmit="event.preventDefault();">
+
+            <input type="email" placeholder="Tu correo" />
+
+            <button type="submit">→</button>
+
+        </form>
+        <br class="linea">
+    </div>
+
+    <!-- CONTENIDO -->
+    <main class="layout">
+
+        <!-- FILTROS -->
+        <aside class="filters">
+            <h2 class="fh">Filtros</h2>
+
+            <div class="box">
+                <h3 class="ft">Categorías</h3>
+                <p>Estilo de Vida_____________367</p>
+                <p>Running____________________76</p>
+                <p>Baloncesto_________________65</p>
+                <p>Fútbol_____________________21</p>
+                <p>Futbol americano___________12</p>
+                <p>Entrenamiento______________54</p>
+            </div>
+
+            <div class="box">
+                <h3 class="ft">Precio</h3>
+                <div class="box-ft">
+                    <div class="columna"><label><input type="checkbox" /> Menos de 50</label></div>
+                    <div class="columna"><label><input type="checkbox" /> 50 a 100</label></div>
+                    <div class="columna"><label><input type="checkbox" checked /> 100 a 150</label></div>
+                    <div class="columna"><label><input type="checkbox" /> 150 a 200</label></div>
+                    <div class="columna"><label><input type="checkbox" /> 250 a 300</label></div>
+                    <div class="columna"><label><input type="checkbox" /> Más de 300</label></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3 class="ft">Colores</h3>
+                <div class="colors">
+                    <span class="c white"></span>
+                    <span class="c gray"></span>
+                    <span class="c yellow"></span>
+                    <span class="c orange"></span>
+                    <span class="c green"></span>
+                    <span class="c blue active"></span>
+                    <span class="c brown"></span>
+                    <span class="c pink"></span>
+                    <span class="c red"></span>
+                    <span class="c purple"></span>
+                    <span class="c black"></span>
+                    <span class="c multicolor"></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3 class="ft">Tallas</h3>
+                <div class="sizes">
+                    <button class="s">4</button>
+                    <button class="s">4.5</button>
+                    <button class="s">5</button>
+                    <button class="s">5.5</button>
+                    <button class="s">6</button>
+                    <button class="s">6.5</button>
+                    <button class="s">7</button>
+                    <button class="s">7.5</button>
+                    <button class="s">8</button>
+                    <button class="s active">8.5</button>
+                    <button class="s">9</button>
+                    <button class="s">9.5</button>
+                    <button class="s">10</button>
+                    <button class="s">10.5</button>
+                    <button class="s">11</button>
+                    <button class="s">11.5</button>
+                    <button class="s">12</button>
+                    <button class="s">12.5</button>
+                    <button class="s">13</button>
+                    <button class="s">13.5</button>
+                    <button class="s">12.5</button>
+                    <button class="s">13</button>
+                    <button class="s">13.5</button>
+                    <button class="s">14</button>
+                    <button class="s">14.5</button>
+                    <button class="s">15</button>
+                    <button class="s">15.5</button>
+                    <button class="s">16</button>
+                    <button class="s">3.5Y</button>
+                    <button class="s">4Y</button>
+                    <button class="s">5Y</button>
+                    <button class="s">6Y</button>
+                    <button class="s">6.5Y</button>
+                    <button class="s">7Y</button>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </aside>
+
+        <!-- PRODUCTOS -->
+        <section class="grid">
+            <div class="pc">
+                <div class="img bg1">
+                    <span class="tag">Nuevo</span>
+                    <img src="img/photo-1600185365483-26d7a4cc7519-Photoroom.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Nike Air Max 270</h4>
+                    <p>$180</p>
+                </div>
+            </div>
+
+            <div class="pc">
+                <div class="img bg2">
+                    <img src="img/photo-1595950653106-6c9ebd614d3a.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Air VaporMax Utility</h4>
+                    <p>$150</p>
+                </div>
+            </div>
+
+            <div class="pc">
+                <div class="img bg3">
+                    <span class="tag">Nuevo</span>
+                    <img src="img/photo-1606107557195-0e29a4b5b4aa-Photoroom.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Air VaporMax Purple</h4>
+                    <p>$210</p>
+                </div>
+            </div>
+            <div class="pc">
+                <div class="img bg4">
+                    <span class="tag">Nuevo</span>
+                    <img src="img/Tenis-Nike-Shox-Para-Hombre-2-Photoroom.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Tenis Nike Shox</h4>
+                    <p>$220</p>
+                </div>
+            </div>
+
+            <div class="pc">
+                <div class="img bg5">
+                    <img src="img/zapato amarillo.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Nike Zoom Fly 6</h4>
+                    <p>$300</p>
+                </div>
+            </div>
+
+            <div class="pc">
+                <div class="img bg6">
+                    <span class="tag">Nuevo</span>
+                    <img src="img/zapato negro (1).png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Nike Air Max Fire</h4>
+                    <p>$598</p>
+                </div>
+            </div>
+            <div class="pc">
+                <div class="img bg7">
+                    <span class="tag">Nuevo</span>
+                    <img src="img/zapato gris.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Nike Fn0228-105</h4>
+                    <p>$300</p>
+                </div>
+            </div>
+
+            <div class="pc">
+                <div class="img bg8">
+                    <img src="img/w=800,h=800,fit=pad-Photoroom.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Tenis Nike Moda P-6000 </h4>
+                    <p>$160</p>
+                </div>
+            </div>
+
+            <div class="pc">
+                <div class="img bg9">
+                    <span class="tag">Nuevo</span>
+                    <img src="img/nike-giannis-immortality-5_0412750_00_5_3652504296-Photoroom.png" />
+                    <button class="pb">🛒</button>
+                </div>
+                <div class="info">
+                    <h4>Nike Giannis Immortality 5 </h4>
+                    <p>$109</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER COMPLETO (NO RECORTADO) -->
+    <footer class="ftr">
+        <div class="ftr-grid">
+            <div>
+                <h4>Compañía</h4>
+                <p>Inicio</p>
+                <p>Sobre Nosotros</p>
+            </div>
+
+            <div>
+                <h4>Plataforma</h4>
+                <p>Servicios</p>
+                <p>Opiniones</p>
+            </div>
+
+            <div>
+                <h4>Soporte</h4>
+                <p>Atención al Cliente</p>
+                <p>Contacto</p>
+                <p>Políticas de Tienda</p>
+            </div>
+
+            <div>
+                <h4>Envíos</h4>
+                <p>Tarifas de Envío</p>
+                <p>Devoluciones</p>
+            </div>
+
+            <div>
+                <h4>Constructor</h4>
+                <p>12 Water St. Vancouver, BC</p>
+                <p>V6B 132 United States</p>
+            </div>
+        </div>
+
+        <div class="ftr-bottom">
+            <span>© 2030 Constructor Corporation. Todos los derechos reservados.</span>
+
+            <div class="links">
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+            </div>
+
+            <div class="news">
+                <span>Boletín:</span>
+                <input placeholder="Correo" />
+                <button>→</button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
