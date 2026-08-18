@@ -2,65 +2,87 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Tablero Dinámico</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.18.1/axios.js"></script>
+    <meta charset="UTF-8">
+    <title>Tablero Dinámico</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.18.1/axios.js"></script>
 </head>
 
-<body>
+<body style="background-color: azure;">
+    <div class="centrado" style="text-align: center; background-color: aquamarine; margin: 0px 0px 20px 0px;">
+        <h1>lista de usuarios</h1>
+        <h2 id="titulo">Cargando...</h2>
+    </div>
+    <div id="contenedor" class="contenedor-tablas"></div>
 
-  <h1 id="titulo">Cargando...</h1>
+    <script>
+        async function cargarTablas() {
+            const parametroUrl = window.location.search;
+            const numeroDeTablas = parseInt(parametroUrl.replace('?', '')) || 100;
 
-  <div id="contenedor" class="contenedor-tablas"></div>
+            document.getElementById('titulo').textContent = `Mostrando ${numeroDeTablas} usuario(s)`;
 
-  <script>
-    async function cargarTablas() {
-      try {
-        const parametroUrl = window.location.search;
-        const numeroDeTablas = parseInt(parametroUrl.replace('?', '')) || 1;
+            let res = await axios.get(`https://randomuser.me/api/?results=${numeroDeTablas}`);
+            const contenedor = document.getElementById('contenedor');
+            
+            res.data.results.forEach((_, i) => {
+                const tabla = document.createElement('table');
 
-        document.getElementById('titulo').textContent = `Mostrando ${numeroDeTablas} usuario(s)`;
+                tabla.innerHTML = `
+                    <div class="tarjeta-usuario" onclick="verPerfil(${i})">
+                        <div>
+                            <h3>
+                                ${res.data.results[i].name.first} ${res.data.results[i].name.last}
+                            </h3>
+                        </div>
+                        <div>
+                            <img src="${res.data.results[i].picture.thumbnail}" alt="foto">
+                        </div>
+                        <div class="texto">
+                            <p class="informacion">
+                                ${res.data.results[i].gender}
+                            </p>
+                            <p class="informacion">
+                                ${res.data.results[i].dob.age}
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="favoritos(event, ${i})" class="estrella">favoritos</button>
+                `;
 
-        let res = await axios.get(`https://randomuser.me/api/?results=${numeroDeTablas}&seed=tablero`);
+                contenedor.appendChild(tabla);
+            });
+            window.res = res;
+        }
 
-        const contenedor = document.getElementById('contenedor');
-        res.data.results.forEach((_, i) => {
-          const tabla = document.createElement('table');
+        function verPerfil(i) {
+            localStorage.setItem('usuarioSeleccionado', JSON.stringify(window.res.data.results[i]));
+            window.location.href = 'perfil.html';
+        }
 
-          tabla.innerHTML = `
-            <div class="tarjeta-usuario">
-              <div>
-                <h3>
-                  ${res.data.results[i].name.first} ${res.data.results[i].name.last}
-                </h3>
-              </div>
-              <div>
-                <img src="${res.data.results[i].picture.thumbnail}" alt="foto">
-              </div>
-              <div class="texto">
-                <p class="email">
-                  ${res.data.results[i].email}
-                </p>
-              </div>
-              <div>
-                <a href="perfil.html?posicion=${i}">
-                  <button>mas informaccion</button>
-                </a>
-              </div>
-            </div>
-          `;
+        function favoritos(event, i) {
+            event.stopPropagation();
+            
+            let listaFavoritos = JSON.parse(localStorage.getItem('listaFavoritos')) || [];
+            const usuarioSeleccionado = window.res.data.results[i];
 
-          contenedor.appendChild(tabla);
-        });
+            const yaExiste = listaFavoritos.some(user => user.login.uuid === usuarioSeleccionado.login.uuid);
 
-      } catch (error) {
-        console.error('Error al cargar datos:', error);
-      }
-    }
+            if (!yaExiste) {
+                listaFavoritos.push(usuarioSeleccionado);
+                localStorage.setItem('listaFavoritos', JSON.stringify(listaFavoritos));
+                alert('¡Usuario agregado a favoritos!');
+            } else {
+                alert('Este usuario ya está en tus favoritos');
+            }
+        }
 
-    cargarTablas();
-  </script>
+        cargarTablas();
+    </script>
+
+    <div class="favoritos.html"> 
+        <a href="favoritos.html">pagina de favoritos</a>
+    </div>
 </body>
 
 </html>
