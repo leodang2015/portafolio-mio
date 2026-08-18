@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tablero Dinámico</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.18.1/axios.js"></script>
+</head>
+
+<body>
+
+  <div id="contenedor" class="contenedor-tablas"></div>
+
+  <script>
+    async function cargarTablas() {
+      try {
+        const parametroUrl = window.location.search;
+        const numeroDeTablas = parseInt(parametroUrl.replace('?', '')) || 1;
+
+        document.getElementById('titulo').textContent = `Mostrando ${numeroDeTablas} usuario(s)`;
+
+        let res = await axios.get(`https://randomuser.me/api/?results=${numeroDeTablas}&seed=tablero`);
+
+        const contenedor = document.getElementById('contenedor');
+        res.data.results.forEach((_, i) => {
+          const tabla = document.createElement('table');
+
+          tabla.innerHTML = `
+            <div class="tarjeta-usuario">
+              <div>
+                <h3>
+                  ${res.data.results[i].name.first} ${res.data.results[i].name.last}
+                </h3>
+              </div>
+              <div>
+                <img src="${res.data.results[i].picture.thumbnail}" alt="foto">
+              </div>
+              <div class="texto">
+                <p class="email">
+                  ${res.data.results[i].email}
+                </p>
+              </div>
+              <div>
+                <a href="perfil.html?posicion=${i}">
+                  <button>mas informaccion</button>
+                </a>
+              </div>
+            </div>
+          `;
+
+          contenedor.appendChild(tabla);
+        });
+
+      } catch (error) {
+        console.error('Error al cargar datos:', error);
+      }
+    }
+
+    cargarTablas();
+  </script>
+</body>
+
+</html>
