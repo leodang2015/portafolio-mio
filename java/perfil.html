@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,9 @@
 </head>
 
 <body id="body">
+    <button onclick="window.location.href='index.html'" class="regreso"><p>🔙</p></button>
+    <button id="favoritos" onclick="window.location.href= 'favoritos.html'"><p>⭐</p></button>
+
     <div id="caja">
         <img id="avatar" alt="" />
         <p id="descripcion"></p>
@@ -27,50 +30,72 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
-            const params = new URLSearchParams(window.location.search);
-            const posicion = parseInt(params.get('posicion')) || 0;
+            const usuarioGuardado = localStorage.getItem('usuarioSeleccionado');
 
-            let res = await axios.get(`https://randomuser.me/api/?results=50&seed=tablero`);
+            if (!usuarioGuardado) {
+                console.error("No hay usuario guardado en localStorage");
+                return;
+            }
+
+            let res = {
+                data: JSON.parse(usuarioGuardado)
+            };
 
             let imagen = document.getElementById("avatar");
-            imagen.src = res.data.results[posicion].picture.large;
+            imagen.src = res.data.picture.large;
 
             let contenedorIconos = document.getElementById("icono");
             let nombre = document.getElementById("nombre");
             let descripcion = document.getElementById("descripcion");
 
             descripcion.textContent = "Mi nombre es";
-            nombre.textContent = `${res.data.results[posicion].name.first} ${res.data.results[posicion].name.last}`;
+            nombre.textContent = `${res.data.name.first} ${res.data.name.last}`;
 
             if (contenedorIconos) {
                 contenedorIconos.addEventListener("mouseover", (event) => {
                     if (event.target.id === "icono-usuario") {
                         descripcion.textContent = "Mi nombre es";
-                        nombre.textContent = `${res.data.results[posicion].name.first} ${res.data.results[posicion].name.last}`;
+                        nombre.textContent = `${res.data.name.first} ${res.data.name.last}`;
                     } else if (event.target.id === "icono-email") {
                         descripcion.textContent = "Mi correo electrónico es";
-                        nombre.textContent = res.data.results[posicion].email;
+                        nombre.textContent = res.data.email;
                     } else if (event.target.id === "icono-direccion") {
                         descripcion.textContent = "Mi dirección es";
-                        nombre.textContent = `${res.data.results[posicion].location.street.name} ${res.data.results[posicion].location.street.number}`;
+                        nombre.textContent = `${res.data.location.street.name} ${res.data.location.street.number}`;
                     } else if (event.target.id === "icono-cumpleaños") {
                         descripcion.textContent = "Mi fecha de nacimiento es";
-                        nombre.textContent = res.data.results[posicion].dob.date.slice(0, 10);
+                        nombre.textContent = res.data.dob.date.slice(0, 10);
                     } else if (event.target.id === "icono-telefono") {
                         descripcion.textContent = "Mi teléfono es";
-                        nombre.textContent = res.data.results[posicion].phone;
+                        nombre.textContent = res.data.phone;
                     } else if (event.target.id === "icono-seguridad") {
                         descripcion.textContent = "Mi contraseña es";
-                        nombre.textContent = res.data.results[posicion].login.password;
+                        nombre.textContent = res.data.login.password;
                     }
                 });
             }
 
             let direccion = document.getElementById("direccion");
             direccion.addEventListener("click", () => {
-                let lat = res.data.results[posicion].location.coordinates.latitude;
-                let lng = res.data.results[posicion].location.coordinates.longitude;
+                let lat = res.data.location.coordinates.latitude;
+                let lng = res.data.location.coordinates.longitude;
                 window.open(`https://www.google.com/maps?q=${lat},${lng}`);
+            });
+
+            let btnFavoritos = document.getElementById("favoritos");
+            btnFavoritos.addEventListener("click", () => {
+                let listaFavoritos = JSON.parse(localStorage.getItem('listaFavoritos')) || [];
+                const usuarioSeleccionado = res.data;
+
+                const yaExiste = listaFavoritos.some(user => user.login.uuid === usuarioSeleccionado.login.uuid);
+
+                if (!yaExiste) {
+                    listaFavoritos.push(usuarioSeleccionado);
+                    localStorage.setItem('listaFavoritos', JSON.stringify(listaFavoritos));
+                    alert('¡Usuario agregado a favoritos!');
+                } else {
+                    alert('Este usuario ya está en tus favoritos');
+                }
             });
         });
     </script>
@@ -94,6 +119,8 @@
             align-items: center;
             justify-items: center;
             align-content: center;
+            position: relative;
+
         }
 
         #icono {
@@ -122,6 +149,30 @@
             width: 200px;
             border-radius: 10px;
             cursor: pointer;
+        }
+
+        .regreso {
+            font-size: 50px;
+            text-align: end;
+            display: grid;
+            background-color: transparent;
+            border: transparent;
+            position: absolute;
+            right:  690px;
+            top: 50px;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #favoritos {
+            font-size: 40px;
+            background-color: transparent;
+            border: transparent;
+            cursor: pointer;
+            position: absolute;
+            left: 690px;
+            top: 70px;
+            z-index: 1;
         }
     </style>
 </body>
