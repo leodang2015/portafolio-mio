@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Favoritos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: azure;">
+    <div class="centrado" style="text-align: center; background-color: aquamarine; margin: 0px 0px 20px 0px;">
+        <h1 id="titulo">Mis Usuarios Favoritos</h1>    
+        <h2 id="titulo">Cargando...</h1>
+    </div>
+
+    <div id="contenedor" class="contenedor-tablas"></div>
+
+    <script>
+        function cargarFavoritos() {
+            const datosGuardados = localStorage.getItem('listaFavoritos');
+            
+            if (!datosGuardados) {
+                document.getElementById('titulo').textContent = "No tienes favoritos guardados";
+                return;
+            }
+
+            let res = {
+                data: {
+                    results: JSON.parse(datosGuardados)
+                }
+            };
+
+            const contenedor = document.getElementById('contenedor');
+            contenedor.innerHTML = "";
+
+            document.getElementById('titulo').textContent = `Mostrando ${res.data.results.length} favorito(s)`;
+
+            res.data.results.forEach((_, i) => {
+                const tabla = document.createElement('table');
+
+                tabla.innerHTML = `
+                    <div class="tarjeta-usuario" onclick="verPerfil(${i})">
+                        <div>
+                            <h3>
+                                ${res.data.results[i].name.first} ${res.data.results[i].name.last}
+                            </h3>
+                        </div>
+                        <div>
+                            <img src="${res.data.results[i].picture.thumbnail}" alt="foto">
+                        </div>
+                        <div class="texto">
+                            <p class="informacion">
+                                ${res.data.results[i].gender}
+                            </p>
+                            <p class="informacion">
+                                ${res.data.results[i].dob.age}
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="eliminarFavorito(${i})" class="caneca-basura"><p>eliminar</p></button>
+                `;
+
+                contenedor.appendChild(tabla);
+            });
+
+            window.res = res;
+        }
+
+        function verPerfil(i) {
+            localStorage.setItem('usuarioSeleccionado', JSON.stringify(window.res.data.results[i]));
+            window.location.href = 'perfil.html';
+        }
+
+        function eliminarFavorito(i) {
+            let lista = JSON.parse(localStorage.getItem('listaFavoritos'));
+            lista.splice(i, 1);
+            localStorage.setItem('listaFavoritos', JSON.stringify(lista));
+            cargarFavoritos();
+        }
+
+        cargarFavoritos();
+    </script>
+    <div class="contenedor-regreso">
+    <button onclick="window.location.href='index.html'" class="btn-regresar">
+        🔙 Volver al Tablero
+    </button>
+    </div>
+</body>
+
+</html>
