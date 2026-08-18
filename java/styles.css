@@ -1,46 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    padding-bottom: 40px;
+}
+
+.centrado {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: white;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.centrado h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.centrado h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
 }
 
 .contenedor-tablas {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+table {
+    display: block;
+    position: relative;
+    border-collapse: collapse;
 }
 
 .tarjeta-usuario {
-  background-color: orange;
-  width: 200px;
-  height: 320px;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 25px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    border: 1px solid #e1e8ed;
+    height: 100%;
+}
+
+.tarjeta-usuario:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-usuario h3 {
+    font-size: 1.1rem;
+    color: #1a252c;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .tarjeta-usuario img {
-  border-radius: 50%;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border: 3px solid #00b4db;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.tarjeta-usuario button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
+.texto {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7fafc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 100%;
 }
 
-.texto p{
-    max-width: 100px;
-    word-break: break-all;
-
+.informacion {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: capitalize;
 }
 
-.email{
-    width: 100px;
+.estrella {
+    width: 38px;
+    height: 38px;
+    background-color: #ffca28;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    z-index: 5;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.estrella:hover {
+    transform: scale(1.2);
+    background-color: #ffb300;
+}
+
+div.favoritos\.html {
+    text-align: center;
+    margin-top: 20px;
+}
+
+div.favoritos\.html a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0083b0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 131, 176, 0.3);
+    transition: background 0.2s ease;
+}
+
+div.favoritos\.html a:hover {
+    background: #00668a;
+}
+.caneca-basura {
+            width: 80px;
+            height: 80px;
+            background-color: #6c757d;
+            clip-path: polygon(
+                35% 0%, 65% 0%, 65% 8%, 90% 8%, 90% 18%, 83% 18%, 75% 100%, 25% 100%, 
+                17% 18%, 10% 18%, 10% 8%, 35% 8%, 35% 0%,
+                33% 25%, 33% 90%, 39% 90%, 39% 25%, 33% 25%,
+                47% 25%, 47% 90%, 53% 90%, 53% 25%, 47% 25%,
+                61% 25%, 61% 90%, 67% 90%, 67% 25%, 61% 25%
+            );
+            position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 8px;
+    font-weight: bold;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+        }
+    .caneca-basura p{
+        font-size: 20px;
+        z-index: 2;
+    }
+
+    .contenedor-regreso {
+    display: flex;
+    justify-content: center;
+    padding: 20px 30px 0 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.btn-regresar {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 131, 176, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-regresar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 131, 176, 0.35);
+    background: linear-gradient(135deg, #00a4c7, #007299);
 }
